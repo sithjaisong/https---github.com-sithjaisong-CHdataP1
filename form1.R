@@ -1,7 +1,8 @@
 # this the dunction to extract the data from excel
 
 form1 <- function(dataf1){
-        
+      
+  
         field.no <- dataf1[3,3]
         names(field.no) <- 'Field.No'
         
@@ -80,15 +81,15 @@ form1 <- function(dataf1){
         
         # ==========CROP STATUS==========
         
-        yld.area1 <- dataf1[95, 14]
+        yld.area1 <- dataf1[90, 14]
         
         names(yld.area1) <- 'Yield.Area1'
         
-        yld.area2 <- dataf1[95, 18]
+        yld.area2 <- dataf1[90, 18]
         
         names(yld.area2) <- 'Yield.Area2'
         
-        yld.area3 <- dataf1[95, 22]
+        yld.area3 <- dataf1[90, 22]
         names(yld.area3) <- 'Yield.Area3'
         
         #====
