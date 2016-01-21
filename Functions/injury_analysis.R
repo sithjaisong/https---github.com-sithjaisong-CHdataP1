@@ -1,6 +1,6 @@
 
 # Load function
-source("~/Documents/Github/https---github.com-sithjaisong-CHdataP1/Functions/function.audpc.R")
+source("~/Documents/Github/surveySKEP1/Functions/function.audpc.R")
 
 # write the function
 injury_analysis <- function(dataF2){

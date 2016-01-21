@@ -13,7 +13,7 @@ library(plyr)
 library(dplyr)
 
 # ==== Load function
-source("~/Documents/Github/https---github.com-sithjaisong-CHdataP1/Functions/form1.R")
+source("~/Documents/Github/surveySKEP1/Functions/form1.R")
 # Here is the script for extract the data for analyse the crop health data in phase 1
 
 # set working directory options(stringsAsFactors = FALSE) setwd('~/Google Drive/survey1')
@@ -21,7 +21,7 @@ source("~/Documents/Github/https---github.com-sithjaisong-CHdataP1/Functions/for
 # I will create the script for make the lists of the files of the survey excel file
 
 # setwd('~/Google Drive/survey1') # this is for Mac
-setwd("~/Desktop/survey1")
+setwd("~/Desktop/surveySKEP1")
 # setwd('E:/Google Drive/survey1') # this is for Window
 
 # list the folders
@@ -43,15 +43,14 @@ for (i in 1:length(list.file)) {
     
     dataf1 <- readWorksheet(loadWorkbook(paste(dirlist[j], "/", list.file[i], sep = "")), sheet = 1, startCol = 1, endCol = 30, 
         startRow = 1, endRow = 100, autofitRow = FALSE, autofitCol = FALSE)
-    # dataf1 <- read_excel(paste(dirlist[2], '/', list.idn[9], sep = ''), sheet = 1, col_names = FALSE)
     
-    # dataf1 <- as.matrix(dataf1) # change to matrix class
+    new.row <- as.data.frame(form1(dataf1)) # store the extracted data
     
-    new.row <- as.data.frame(form1(dataf1))
-    new.row$filename <- as.character(list.file[i])
+    new.row$filename <- as.character(list.file[i]) # inset the column named "filename"
     
+    # corract the type of variables
     new.row <- new.row %>% transform(
-      filename = as.character(as.factorfilename)),
+      filename = as.character(as.factor(filename)),
       field.area = as.numeric(as.character(field.area)),
       farmer.name = as.character(farmer.name),
       land.form = as.character(land.form),
@@ -72,7 +71,7 @@ for (i in 1:length(list.file)) {
       yld.area1 = as.numeric(as.character(yld.area1)),
       yld.area2 = as.numeric(as.character(yld.area2)),
       yld.area3 = as.numeric(as.character(yld.area3))
-    )
+      )
     
     FORM1 <- rbind(FORM1, new.row)
 }
@@ -80,9 +79,11 @@ for (i in 1:length(list.file)) {
 
 row.names(FORM1) <- NULL
 
+# move the filename column up to the front column
 col_idx <- grep("filename", names(FORM1))
 FORM1 <- FORM1[, c(col_idx, (1:ncol(FORM1))[-col_idx])]
 
+# FORM1 data is in the right data frame
 #FORM1 <- data.frame(lapply(FORM1, as.character), stringsAsFactors = FALSE)
 
 #write.csv(dataF1, file = "dataf1.vnm.csv")

@@ -1,6 +1,15 @@
 
 # Load function
-source("~/Documents/Github/https---github.com-sithjaisong-CHdataP1/Functions/function.audpc.R")
+##############################################################################
+# title         : weed_analysis.R;
+# purpose       : compute weed data recoreded in the excel file;
+# producer      : prepared by S. jaiosong;
+# last update   : in Los Banos, IRRI, 21 January 2016;
+# inputs        : crop health survey form 1 (excel);
+# outputs       : injuries and disease data of SKEP Phase I from all locations;
+##############################################################################
+
+source("~/Documents/Github/surveySKEP1//Functions/function.audpc.R")
 
 weed_analysis <- function(form2.weed) {
     

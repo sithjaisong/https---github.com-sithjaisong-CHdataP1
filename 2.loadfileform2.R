@@ -3,7 +3,7 @@
 # purpose       : extract the injuries and diseases from the form2visit1 and form2visit2 in excel file;
 # producer      : prepared by S. jaiosong;
 # last update   : in Los Banos, IRRI, 21 January 2016;
-# inputs        : crop health survey form 1 (excel);
+# inputs        : crop health survey form 2 (excel);
 # outputs       : injuries and disease data of SKEP Phase I from all locations;
 ##############################################################################
 # ==== Load libraries
@@ -15,18 +15,18 @@ library(reshape)
 library(reshape2)
 
 # Load function
-source("~/Documents/Github/https---github.com-sithjaisong-CHdataP1/Functions/injury.R")
-source("~/Documents/Github/https---github.com-sithjaisong-CHdataP1/Functions/tidy_injury.R")
-source("~/Documents/Github/https---github.com-sithjaisong-CHdataP1/Functions/injury_analysis.R")
+source("~/Documents/Github/surveySKEP1/Functions/injury.R")
+source("~/Documents/Github/surveySKEP1/Functions/tidy_injury.R")
+source("~/Documents/Github/surveySKEP1/Functions/injury_analysis.R")
 
-source("~/Documents/Github/https---github.com-sithjaisong-CHdataP1/Functions/weed.R")
-source("~/Documents/Github/https---github.com-sithjaisong-CHdataP1/Functions/tidy_weed.R")
-source("~/Documents/Github/https---github.com-sithjaisong-CHdataP1/Functions/weed_analysis.R")
+source("~/Documents/Github/surveySKEP1/Functions/weed.R")
+source("~/Documents/Github/surveySKEP1/Functions/tidy_weed.R")
+source("~/Documents/Github/surveySKEP1/Functions/weed_analysis.R")
 
-setwd("~/Desktop/survey1")
+setwd("~/Desktop/surveySKEP1")
 # load data of form2
 
-# list the folders
+forfo# list the folders
 
 
 

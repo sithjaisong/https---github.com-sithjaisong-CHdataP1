@@ -1,3 +1,12 @@
+##############################################################################
+# title         : form1.R
+# purpose       : extract the general information from the sheet1 named "form1" in excel file;
+# producer      : prepared by S. jaiosong;
+# last update   : in Los Banos, IRRI, 21 January 2016;
+# inputs        : crop health survey form 1 (excel);
+# outputs       : general information in the data frame format;
+##############################################################################
+
 # this the dunction to extract the data from excel
 
 form1 <- function(dataf1) {
